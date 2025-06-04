@@ -1,21 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <!-- Your header content here -->
+    <header id="site-title">
+        <h1>Music Playslist Explorer</h1>
     </header>
 
-    <main> 
-        <!-- Your main content here -->
+    <div class="tab-group">
+        <div class="tabs">
+            <h3 class="active">Featured</h3>
+            <h3>All</h3>
+        </div>
+    </div>
+
+    <main>
+        <div id="populContent" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <h2 id="Playlist Title"></h2>
+                <img id="playlist Image" src="assets/img/playlist.png" alt="Festival Image">
+                <p id="Created By"></p>
+            </div>
+        </div>
+
+        <div id="playlist-body">
+            <article class="playlist">
+                <img src="assets/img/playlist.png" alt="" width="200px">
+                <h2>Playlist Title 1</h2>
+                <p>Created by: </p>
+            </article>
+
+            <article class="playlist">
+                <img src="assets/img/playlist.png" alt="" width="200px">
+                <h2>Playlist Title 2</h2>
+                <p>Created by: </p>
+            </article>
+
+            <article class="playlist">
+                <img src="assets/img/playlist.png" alt="" width="200px">
+                <h2>Playlist Title 3</h2>
+                <p>Created by: </p>
+            </article>
+
+            <article class="playlist">
+                <img src="assets/img/playlist.png" alt="" width="200px">
+                <h2>Playlist Title 4</h2>
+                <p>Created by: </p>
+            </article>
+
+            <article class="playlist">
+                <img src="assets/img/playlist.png" alt="" width="200px">
+                <h2>Playlist Title 5</h2>
+                <p>Created by: </p>
+            </article>
+
+            <article class="playlist">
+                <img src="assets/img/playlist.png" alt="" width="200px">
+                <h2>Playlist Title</h2>
+                <p>Created by: </p>
+            </article>
+        </div>
     </main>
 
     <footer>
@@ -24,4 +78,5 @@
     <script src="data/data.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
