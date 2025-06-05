@@ -8,11 +8,19 @@ body {
 
 header {
     display: flex;
-    justify-content: center;
-    color: black;
+    justify-content: space-evenly;
+    color: white;
     font-size:x-large;
+    border: solid black 1px;
+    background-color: maroon;
 }
 
+#tabs {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    align-items: flex-end;
+}
 
 #playlist-body {
     display: grid;
@@ -33,7 +41,7 @@ header {
     font-size: large;
 }
 
-.modal {
+.popup {
    display: none; /* Hidden by default */
    position: fixed; /* Stay in place */
    z-index: 1; /* Sit on top */
@@ -45,12 +53,14 @@ header {
    background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+.popup-content {
    background-color: #fefefe;
    margin: 15% auto;
    padding: 20px;
    border: 1px solid #888;
    width: 80%;
+   border-radius: 25px;
+   color: black;
 }
 .close {
    color: #aaa;

@@ -14,22 +14,22 @@
 <body>
     <header id="site-title">
         <h1>Music Playslist Explorer</h1>
+        <div id="tabs">
+            <h3 onclick="openFeatureTab()" id="featured-tab">Featured</h3>
+            <h3 onclick="openAllTab()" id="all-tab">All</h3>
+        </div>
     </header>
 
-    <div class="tab-group">
-        <div class="tabs">
-            <h3 class="active">Featured</h3>
-            <h3>All</h3>
-        </div>
-    </div>
+    
+
 
     <main>
-        <div id="populContent" class="popup">
+        <div id="popupContent" class="popup">
             <div class="popup-content">
                 <span class="close">&times;</span>
-                <h2 id="Playlist Title"></h2>
-                <img id="playlist Image" src="assets/img/playlist.png" alt="Festival Image">
-                <p id="Created By"></p>
+                <h2 id="Playlist Title">Playlist Title</h2>
+                <img id="Playlist Image" src="assets/img/playlist.png" alt="Playlist cover" width="200px">
+                <p id="Created By">Created by:</p>
             </div>
         </div>
 
