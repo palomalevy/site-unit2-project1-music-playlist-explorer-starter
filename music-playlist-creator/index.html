@@ -13,35 +13,24 @@
 
 <body>
     <header id="site-title">
-        <h1>Music Playslist Explorer</h1>
+        <h1>🔎 Music Playslist Explorer 🔎</h1>
         <div id="tabs">
             <h3 onclick="openFeatureTab()" id="featured-tab">Featured</h3>
             <h3 onclick="openAllTab()" id="all-tab">All</h3>
         </div>
     </header>
 
-    
-
 
     <main>
-        <div id="popupContent" class="popup">
-            <div class="popup-content">
-                <span class="close">&times;</span>
-                <h2 id="Playlist Title">Playlist Title</h2>
-                <img id="Playlist Image" src="assets/img/playlist.png" alt="Playlist cover" width="200px">
-                <p id="Created By">Created by:</p>
-            </div>
-        </div>
-
         <div id="playlist-body">
             <article class="playlist">
-                <img src="assets/img/playlist.png" alt="" width="200px">
+                <img src="https://picsum.photos/200" alt="" width="200px">
                 <h2>Playlist Title 1</h2>
                 <p>Created by: </p>
             </article>
 
             <article class="playlist">
-                <img src="assets/img/playlist.png" alt="" width="200px">
+                <img src="https://picsum.photos/200" alt="" width="200px">
                 <h2>Playlist Title 2</h2>
                 <p>Created by: </p>
             </article>
@@ -70,6 +59,59 @@
                 <p>Created by: </p>
             </article>
         </div>
+
+        <div id="popupContent" class="popup">
+            <div class="popup-content">
+                <span class="close">&times;</span>
+                <div class="popup-header">
+                    <div id="onlyHeader">
+                        <div id="playlist-image">
+                            <img id="Playlist Image" src="assets/img/playlist.png" alt="Playlist cover" width="200px">
+                        </div>
+                        <div id="right">
+                            <h2 id="Playlist Title">Playlist Title</h2>
+                            <p id="Created By">Created by:</p>
+                        </div>
+                    </div>
+
+                <div class="allSongs">
+                    <div class="song">
+                        <div class="song-image">
+                            <img class="songImage" src="assets/img/song.png" alt="Song cover" width="100px">
+                        </div>
+                        <div class="songDetails">
+                            <h3 class="songTitle">testing title</h3>
+                            <p class="artistName">testing artist</p>
+                            <p class="albumTitle">testing album</p>
+                            <p class="songDuration">testing duration</p>
+                        </div>
+                    </div>
+
+                    <div class="song">
+                        <img class="songImage" src="assets/img/song.png" alt="Song cover" width="100px">
+                        <div class="songDetails">
+                            <h3 class="songTitle">testing title</h3>
+                            <p class="artistName">testing artist</p>
+                            <p class="albumTitle">testing album</p>
+                            <p class="songDuration">testing duration</p>
+                        </div>
+                    </div>
+
+                    <div class="song">
+                        <img class="songImage" src="assets/img/song.png" alt="Song cover" width="100px">
+                        <div class="songDetails">
+                            <h3 class="songTitle">testing title</h3>
+                            <p class="artistName">testing artist</p>
+                            <p class="albumTitle">testing album</p>
+                            <p class="songDuration">testing duration</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        
     </main>
 
     <footer>

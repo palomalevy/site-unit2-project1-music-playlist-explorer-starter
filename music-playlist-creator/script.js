@@ -18,6 +18,14 @@ for (let playlist of playlists) {
         document.getElementById('Playlist Image').src = image;
         document.getElementById('Created By').innerText = createdBy;
 
+        // let popupTitle = playlist.querySelector('.popup-header h2');
+        // let popupImage = playlist.querySelector('.popup-header img');
+        // let popupCreator = playlist.querySelector('.popup-header p');
+
+        // if (popupTitle) popupTitle.innertext = title;
+        // if (popupImage) popupImage.src = image;
+        // if (popupCreator) popupCreator.innerText = createdBy
+
         popup.style.display = 'flex';
     })
 }
