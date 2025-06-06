@@ -6,6 +6,15 @@ body {
     color: white;
 }
 
+footer {
+    background-color: maroon;
+    width: 100%;
+    bottom: 0;
+    color: maroon;
+    height: 100px;
+    margin-bottom: 0;
+}
+
 /* text */
 h2 {
     margin-bottom: 9px;
@@ -15,6 +24,12 @@ h2 {
 
 h3 {
     margin: 1px;
+    padding: 0;
+}
+
+h4 {
+    font-size: x-large;
+    margin: 0;
     padding: 0;
 }
 
@@ -142,7 +157,6 @@ header {
    height: 100%;
    overflow: auto;
    background-color: rgba(0,0,0,0.4);
-
    flex-wrap: wrap;
 
    .popup-content {

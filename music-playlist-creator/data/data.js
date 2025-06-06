@@ -25,15 +25,15 @@ const allPlaylists = [
       {
         id: 3,
         // image: 'https://example.com/song4-image.jpg',
-        title: 'Bohemian Rhapsody',
-        artist: 'Queen',
-        album: 'A Night at the Opera',
-        duration: '5:55'
+        title: 'Sweet Child O Mine',
+        artist: 'Guns N Roses',
+        album: 'Appetite for Destruction',
+        duration: '5:56'
       },
       {
         id: 4,
         // image: 'https://example.com/song4-image.jpg',
-        title: 'Bohemian Rhapsody',
+        title: 'Bohemian Rhapsody 2',
         artist: 'Queen',
         album: 'A Night at the Opera',
         duration: '5:55'

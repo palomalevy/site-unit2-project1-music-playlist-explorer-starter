@@ -6,7 +6,7 @@ function getSongInformation(playlistID) {
     console.log('getting song info');
     const foundPlaylist = allPlaylists.find(playlist => playlist.id === playlistID);
 
-    let songHTML = ''
+    let songHTML = '';
     for(let songInfo of foundPlaylist.songs) {
         songHTML += `
             <div class="song">
@@ -20,11 +20,10 @@ function getSongInformation(playlistID) {
                             <p class="songDuration">${songInfo.duration}</p>
                         </div>
                     </div>
-        `
+        `;
     }
-
     document.querySelector('.allSongs').innerHTML = songHTML;
-}
+};
 
 function getPlaylistInformation() {
     console.log("getting information");
@@ -65,6 +64,7 @@ function getPlaylistInformation() {
     }
 }
 
+
 function createPlaylistElem(playlist) {
   console.log("creating playlist");
   const article = document.createElement("article");
@@ -76,26 +76,40 @@ function createPlaylistElem(playlist) {
         <h2>${playlist.title}</h2>
         <p>${playlist.creator}</p>
     </div>
-    <button class='heart-button' type="button">🤍
-        <div id='like-counter'>
-            <h3>${playlist.likes}</h3>
+    <button class='heart-button' type="button">🤍<div id='like-counter'>
+            <h3 id="likeCount">${playlist.likes}</h3>
         </div>
     </button>
     `;
 
-    // const heartButton = article.querySelector(".heart-button");
-    // const emojiSpan = heartButton.querySelector(".emoji");
+    const heartButton = article.querySelector('.heart-button');
 
-    // heartButton.addEventListener("click", () => {
-    //     if (emojiSpan.textContent === "🤍") {
-    //         emojiSpan.textContent = "💖";
-    //     } else {
-    //         emojiSpan.textContent = "🤍";
-    //     }
-    // });
-    
+    const likeCounter = heartButton.querySelector('#like-counter');
+    const likeNumber = likeCounter.querySelector('h3');
 
-  return article;
+    let currentLikes = parseInt(likeNumber.textContent);
+    let heartActive = false;
+
+    // Changes like button when clicked and increments/decrements like count
+    heartButton.addEventListener('click', () => {
+        const childNodes = heartButton.childNodes;
+        for (let i = 0; i < childNodes.length; i++) {
+            if (childNodes[i].nodeType === Node.TEXT_NODE) {
+                if (childNodes[i].textContent === '🤍') {
+                    childNodes[i].textContent = '💖';
+                    heartActive = true;
+                    currentLikes++;
+                } else if (childNodes[i].textContent === '💖') {
+                    childNodes[i].textContent = '🤍';
+                    heartActive = false;
+                    currentLikes--;
+                }
+            }
+        }
+        likeNumber.textContent = currentLikes.toString();
+    });
+
+    return article;
 }
 
 let closeButton = document.querySelector(".close");

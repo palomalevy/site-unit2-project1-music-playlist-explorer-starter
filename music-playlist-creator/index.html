@@ -16,6 +16,10 @@
         <h1>Music Playslist Explorer 🔎</h1>
         <div id="tabs">
             <h3 onclick="openAllTab()" id="all-tab">ALL</h3>
+            <a href="feature.html">
+                <button>
+                    <h3>FEATURED</h3>
+                </button></a>
             <h3 onclick="openFeatureTab()" id="featured-tab">FEATURED</h3>
         </div>
     </header>
@@ -43,6 +47,11 @@
                         <div id="right">
                             <h2 id="Playlist Title">Playlist Title</h2>
                             <p id="Created By">Created by:</p>
+                            <button class="shuffle-button">
+                                <div id="buttonInfo">
+                                    <p>Shuffle Songs</p>
+                                </div>
+                            </button>
                         </div>
                     </div>
 
@@ -67,7 +76,9 @@
     </main>
 
     <footer>
-        <!-- Your footer content here -->
+        <div id="footer">
+            <h4>Footer</h4>
+        </div>
     </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
