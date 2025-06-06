@@ -15,19 +15,33 @@
     <header id="site-title">
         <h1>Music Playslist Explorer 🔎</h1>
         <div id="tabs">
-            <h3 onclick="openAllTab()" id="all-tab">ALL</h3>
-            <h3 onclick="openFeatureTab()" id="featured-tab">FEATURED</h3>
+            <a href="index.html">
+                <button id="all-button">
+                    <h3>ALL</h3>
+                </button></a>
+                
+            <a href="feature.html">
+                <button id="featured-button">
+                    <h3>FEATURED</h3>
+                </button></a>
         </div>
     </header>
 
     <main>
-        <h2>Featured Playlist</h2>
-        
-    </main>
-</body>
-<!-- 
-<footer>
+        <h2 id="featured-title">FEATURED</h2>
 
-</footer> -->
+        <div id="featured"></div>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <h4>Footer</h4>
+        </div>
+    </footer>
+
+    <script src="data/data.js"></script>
+    <script src="script.js"></script>
+</body>
+
 
 </html>

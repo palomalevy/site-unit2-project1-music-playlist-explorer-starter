@@ -23,6 +23,7 @@ function getSongInformation(playlistID) {
         `;
     }
     document.querySelector('.allSongs').innerHTML = songHTML;
+    // Use event listener to create an instance for when the shuffle button is clicked
 };
 
 function getPlaylistInformation() {

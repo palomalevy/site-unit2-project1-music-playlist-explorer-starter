@@ -56,20 +56,56 @@ header {
     justify-content: right;
     gap: 20px;
     align-items: center;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: large;
 
-    #all-tab {
+    #featured-button {
+        display: flex;
+        justify-content: right;
+        color: white;
+        gap: 20px;
+        align-items: center;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: large;
+        
         background-color:#e0a7a7;
         border-radius: 15px;
         padding: 9px;
+
+        transition: 0.2s all;
     }
-    
-    #featured-tab {
+
+    #featured-button:hover {
+        cursor: pointer;
+        transform: scale(0.90);
+    }
+
+    #all-button{
+        display: flex;
+        justify-content: right;
+        color: white;
+        gap: 20px;
+        align-items: center;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: large;
+        
         background-color:#e0a7a7;
         border-radius: 15px;
         padding: 9px;
+
+        transition: 0.2s all;
     }
+
+    #all-button:hover {
+        cursor: pointer;
+        transform: scale(0.90);
+    }
+}
+
+button {
+    display: flex;
+    background-color: transparent;
+    border: 0;
+    padding:0;
+    cursor: pointer;
 }
 
 #playlist-body {
@@ -101,13 +137,6 @@ header {
         width: 200px;
         height: auto;
         
-        button {
-            display: flex;
-            background-color: transparent;
-            border: none;
-            padding:0;
-            cursor: pointer;
-        }
 
         .heart-button{
             display: flex;
@@ -178,15 +207,42 @@ header {
         font-size: large;
         display: flex;
         flex-direction: column;
+        line-height: 120%;
 
         #onlyHeader {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
+            margin-bottom: 4px;
+        }
+
+        #buttonInfo {
+            color: white;
+            gap: 20px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: medium;
+            border: 0;
+            
+            background-color:#e0a7a7;
+            border-radius: 15px;
+            padding: 8px;
+
+            transition: 0.2s all;
+        }
+
+        #buttonInfo:hover {
+            cursor: pointer;
+            transform: scale(0.90);
         }
 
         #right {
             padding: 10px;
+        }
+
+        .shuffle-button {
+            display: flex;
+            margin-top: 10px;
+            justify-content: flex-start;
         }
     }
 }
@@ -239,4 +295,12 @@ img {
    color: black;
    text-decoration: none;
    cursor: pointer;
+}
+
+#featured-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: xx-large;
 }
