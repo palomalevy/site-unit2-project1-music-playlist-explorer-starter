@@ -1,5 +1,11 @@
+let songsArray = [];
+
 document.addEventListener("DOMContentLoaded", () => {
-  getPlaylistInformation();
+    if (document.getElementById('featured-body')){
+        getFeatured();
+    } else {
+        getPlaylistInformation();
+    }
 });
 
 function getSongInformation(playlistID) {
@@ -8,10 +14,10 @@ function getSongInformation(playlistID) {
 
     let songHTML = '';
     for(let songInfo of foundPlaylist.songs) {
-        songHTML += `
+         song = `
             <div class="song">
                         <div class="songImage">
-                            <img class="songImage" src="https://picsum.photos/200" alt="Song cover" width="100px">
+                            <img class="songImage" src="${songInfo.image}" alt="Song cover" width="100px">
                         </div>
                         <div class="songDetails">
                             <h3 class="songTitle">${songInfo.title}</h3>
@@ -21,9 +27,36 @@ function getSongInformation(playlistID) {
                         </div>
                     </div>
         `;
+        songHTML += song;
+        songsArray.push(song);
     }
+    console.log("length: " + songsArray.length);
     document.querySelector('.allSongs').innerHTML = songHTML;
     // Use event listener to create an instance for when the shuffle button is clicked
+};
+
+function shuffleStart(songsaArray2) {
+    console.log('shuffle is shuffling')
+    console.log("before:");
+
+    let currentIndex = songsaArray2.length
+    while (currentIndex != 0) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        console.log(currentIndex)
+        let temp = songsaArray2[currentIndex];
+        songsaArray2[currentIndex] = songsaArray2[randomIndex];
+        songsaArray2[randomIndex] = temp;
+    }
+
+    let songHTML = ""
+    for (i = 0; i < songsaArray2.length; i++) {
+        songHTML += songsaArray2[i]
+    }
+    console.log("final: ")
+    console.log(songHTML)
+    document.querySelector('.allSongs').innerHTML = songHTML;
+    return songsaArray2;
 };
 
 function getPlaylistInformation() {
@@ -65,14 +98,60 @@ function getPlaylistInformation() {
     }
 }
 
+function getFeatured(playlist) {
+    const featuredBody = document.getElementById("featured-body");
+    const songsBody = document.getElementById('songs-body');
+    // allPlaylists.forEach((playlist) => {
+    //     console.log(playlist);
+    //     const playlistElem = createPlaylistElem(playlist);
+    //     console.log(playlistElem);
+    //     featuredBody.appendChild(playlistElem);
+    // });
+    //   console.log("creating playlist");
+    playlist = allPlaylists[0]
+    console.log(playlist);
+    const article = document.createElement("article");
+    article.id = `${playlist.id}`
+    article.className = "playlist";
+    article.innerHTML = `
+        <img src="${playlist.coverImage}" alt="" width="200px">
+        <div class="playlist-name">
+            <h2>${playlist.title}</h2>
+            <p>${playlist.creator}</p>
+        </div>
+        `;
+    featuredBody.appendChild(article);
 
+    let songHTML = ''
+    for(let song of playlist.songs) {
+         fullSongInfo = `
+            <div class="song">
+                        <div class="songImage">
+                            <img class="songImage" src="${song.image}" alt="Song cover" width="100px">
+                        </div>
+                        <div class="songDetails">
+                            <h3 class="songTitle">${song.title}</h3>
+                            <p class="artistName">${song.artist}</p>
+                            <p class="albumTitle">${song.album}</p>
+                            <p class="songDuration">${song.duration}</p>
+                        </div>
+                    </div>
+        `;
+        songHTML += fullSongInfo;
+    }
+    songsBody.appendChild(songHTML);
+};
+
+function getRandomPlayList() {
+
+}
 function createPlaylistElem(playlist) {
   console.log("creating playlist");
   const article = document.createElement("article");
   article.id = `${playlist.id}`
   article.className = "playlist";
   article.innerHTML = `
-    <img src="https://picsum.photos/200" alt="" width="200px">
+    <img src="${playlist.coverImage}" alt="" width="200px">
     <div class="playlist-name">
         <h2>${playlist.title}</h2>
         <p>${playlist.creator}</p>
@@ -117,6 +196,8 @@ let closeButton = document.querySelector(".close");
 closeButton.addEventListener("click", function () {
   let popup = document.querySelector(".popup");
   popup.style.display = "none";
+
+  songsArray = [];
 });
 
 function openFeatureTab() {
