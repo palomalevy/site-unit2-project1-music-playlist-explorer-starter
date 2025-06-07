@@ -4,7 +4,7 @@ const allPlaylists = [
     coverImage: 'https://picsum.photos/200?random=1',
     title: 'My Favorite Songs',
     creator: 'Created By: John Doe',
-    likes: 23,
+    likes: 0,
     songs: [
       {
         id: 1,

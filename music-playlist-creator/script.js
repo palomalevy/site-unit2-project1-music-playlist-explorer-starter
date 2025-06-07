@@ -1,7 +1,7 @@
 let songsArray = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById('featured-body')){
+    if (document.getElementById('featured-group')){
         getFeatured();
     } else {
         getPlaylistInformation();
@@ -101,14 +101,10 @@ function getPlaylistInformation() {
 function getFeatured(playlist) {
     const featuredBody = document.getElementById("featured-body");
     const songsBody = document.getElementById('songs-body');
-    // allPlaylists.forEach((playlist) => {
-    //     console.log(playlist);
-    //     const playlistElem = createPlaylistElem(playlist);
-    //     console.log(playlistElem);
-    //     featuredBody.appendChild(playlistElem);
-    // });
-    //   console.log("creating playlist");
-    playlist = allPlaylists[0]
+    console.log(songsBody);
+
+    playlist = allPlaylists[Math.floor(Math.random() * allPlaylists.length)];
+    
     console.log(playlist);
     const article = document.createElement("article");
     article.id = `${playlist.id}`
@@ -139,7 +135,7 @@ function getFeatured(playlist) {
         `;
         songHTML += fullSongInfo;
     }
-    songsBody.appendChild(songHTML);
+    songsBody.innerHTML = songHTML;
 };
 
 function getRandomPlayList() {
