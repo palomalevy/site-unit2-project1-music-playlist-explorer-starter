@@ -1,25 +1,33 @@
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Source Serif 4", serif;
     margin: 0;
     padding: 0;
-    background-color: #e0a7a7;
+    background-color: #CCB7AE;
     color: white;
 }
 
 footer {
-    background-color: maroon;
+    display: flex;
+    background-color: #031927;
+    font-family: "Source Serif 4", serif;
+    position: fixed;
+    font-size: medium;
     width: 100%;
     bottom: 0;
-    color: maroon;
-    height: 100px;
+    color: white;
     margin-bottom: 0;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: linear-gradient(to top, #031927 80%, rgba(51, 51, 51, 0)) no-repeat;
+    justify-content: center;
 }
 
 /* text */
 h2 {
     margin-bottom: 9px;
     padding: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Source Serif 4", serif;
 }
 
 h3 {
@@ -47,8 +55,11 @@ header {
     justify-content: space-evenly;
     color: white;
     font-size:x-large;
-    border: solid black 1px;
-    background-color: maroon;
+    background-color: #031927;
+    position: relative;
+    background: linear-gradient(to bottom, #031927 90%, rgba(51, 51, 51, 0)) no-repeat;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #tabs {
@@ -63,10 +74,10 @@ header {
         color: white;
         gap: 20px;
         align-items: center;
-        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family:"Source Serif 4", serif;
         font-size: large;
         
-        background-color:#e0a7a7;
+        background-color:#CCB7AE;
         border-radius: 15px;
         padding: 9px;
 
@@ -84,10 +95,10 @@ header {
         color: white;
         gap: 20px;
         align-items: center;
-        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-family:"Source Serif 4", serif;
         font-size: large;
         
-        background-color:#e0a7a7;
+        background-color:#CCB7AE;
         border-radius: 15px;
         padding: 9px;
 
@@ -109,34 +120,43 @@ button {
 }
 
 #playlist-body {
-    display: grid;
-    grid-template-columns: repeat(4, 350px);
-    column-gap: 1px;
-    row-gap: 50px;
-    place-items: center;
-    place-content: center;
-    padding: 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    gap: 20px 50px;
+    padding: 80px;
+ 
+    > * {
+    width: calc(350px - 1px); 
+    }
 
     .playlist-name {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        margin-bottom: 20px;
+
+        #bottomButtons {
+            display: flex;
+            flex-direction: row;
+            gap: 140px;
+            margin-top: 20px;
+        }
     }
 
     .playlist {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        border: solid black 1px;
         padding: 25px;
-        background-color: maroon;
+        background-color: #636B61;
         border-radius: 25px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Source Serif 4", serif;
         font-size: large;
         width: 200px;
-        height: auto;
 
+        
         .heart-button{
             display: flex;
             height: 20px;
@@ -146,13 +166,19 @@ button {
         #like-counter {
             color: white;
             font-size: medium;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family:"Source Serif 4", serif;
+        }
+
+        .deleteButton {
+            display: flex;
+            height: 20px;
+            width: 20px;
         }
     }
 
     .playlist:hover {
     cursor: pointer;
-    box-shadow: 10px 10px 5px rgb(92, 2, 2);
+    box-shadow: 0px 0px 10px #636B61;
     transform: scale(1.01);
 }
 }
@@ -190,14 +216,12 @@ button {
    width: 100%;
    height: 100%;
    overflow: auto;
-   background-color: rgba(0,0,0,0.4);
    flex-wrap: wrap;
 
    .popup-content {
-        background-color: #fefefe;
+        background-color: #636B61;
         margin: 15% auto;
         padding: 20px;
-        border: 1px solid #888;
         width: 80%;
         border-radius: 25px;
         color: black;
@@ -207,8 +231,8 @@ button {
     }
 
     .popup-header {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color: black;
+        font-family: "Source Serif 4", serif;
+        color: white;
         font-size: large;
         display: flex;
         flex-direction: column;
@@ -224,11 +248,11 @@ button {
         #buttonInfo {
             color: white;
             gap: 20px;
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-family:"Source Serif 4", serif;
             font-size: medium;
             border: 0;
             
-            background-color:#e0a7a7;
+            background-color:#CCB7AE;
             border-radius: 15px;
             padding: 8px;
 
@@ -256,7 +280,7 @@ button {
 img {
     border-radius: 10px;
     max-width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 
 .allSongs {
@@ -265,7 +289,8 @@ img {
 
     .song {
     display: flex;
-    background-color:#ececec;
+    background-color:#CCB7AE;
+    color: black;
     border-radius: 10px;
     flex-direction: row;
     align-items: center;
@@ -288,7 +313,7 @@ img {
 }
 
 .close {
-   color: #aaa;
+   color: #CCB7AE;
    float: right;
    font-size: 28px;
    font-weight: bold;

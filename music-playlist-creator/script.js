@@ -75,7 +75,7 @@ function getPlaylistInformation() {
         playlistElem.addEventListener("click", function (event) {
             console.log(event.target);
 
-            if (event.target.classList.contains("heart-button")) {
+            if (event.target.classList.contains("heart-button") || event.target.classList.contains('deleteButton')) {
                 event.stopPropagation();
             } else {
                 let popup = document.querySelector(".popup");
@@ -141,6 +141,7 @@ function getFeatured(playlist) {
 function getRandomPlayList() {
 
 }
+
 function createPlaylistElem(playlist) {
   console.log("creating playlist");
   const article = document.createElement("article");
@@ -151,11 +152,15 @@ function createPlaylistElem(playlist) {
     <div class="playlist-name">
         <h2>${playlist.title}</h2>
         <p>${playlist.creator}</p>
+    <div id=bottomButtons>
+        <button class='heart-button' type="button">🤍<div id='like-counter'>
+                <h3 id="likeCount">${playlist.likes}</h3></div>
+        </button>
+        <button class="deleteButton" onclick="deletePlaylistItem()">
+            <img src="assets/img/trash-can.png" alt="delete button">
+        </button>
     </div>
-    <button class='heart-button' type="button">🤍<div id='like-counter'>
-            <h3 id="likeCount">${playlist.likes}</h3>
-        </div>
-    </button>
+        
     `;
 
     const heartButton = article.querySelector('.heart-button');
@@ -196,10 +201,18 @@ closeButton.addEventListener("click", function () {
   songsArray = [];
 });
 
+
 function openFeatureTab() {
   console.log("feature.click");
 }
 
 function openAllTab() {
   console.log("feature.all");
+}
+
+
+function deletePlaylistItem() {
+  const playlistItem = event.target.closest('.playlist');
+  playlistItem.remove();
+  event.stopPropagation();
 }
